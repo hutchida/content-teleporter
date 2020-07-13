@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="container">
-      <h1>Content Teleporting Database</h1>
+      <h5>Content Teleporting Database</h5>
       <snippets />
     </div>
   </div>
@@ -16,9 +16,17 @@ export default {
   components: {
     snippets
   },
+          
+   filters: {
+      trunc(str, len = 87) {
+        _.trim(str);
+        return _.truncate(str, {'length': len});
+      },
+    },
 
   data: () => ({
     title: "Content Teleporting"
   })
-};
+}
+;
 </script>

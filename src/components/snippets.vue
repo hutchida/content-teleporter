@@ -12,12 +12,35 @@
       <template v-slot:body.prepend>
         <tr>
           <td>
-            <v-text-field v-model="PA" type="text" label="Search..."></v-text-field>
+            <v-text-field v-model="PA" type="text" label="Enter PA..."></v-text-field>
           </td>
+          <!--<td>
+            <b-dropdown
+              split
+              split-variant="outline-primary"
+              variant="primary"
+              text="Select practice area"
+              class="m-2"
+            >
+              <b-dropdown-item v-for="pa in PAs" v-bind:key="pa"  v-model="PA" href="#">{{ pa }}</b-dropdown-item>
+            </b-dropdown>
+          </td>
+          
           <td>
             <v-text-field v-model="id" type="text" label></v-text-field>
-          </td>
+          </td>-->
         </tr>
+      </template>
+      <template v-slot:item.PA="{ item }">
+        {{item.PA}}
+        <br />
+        <br />
+        <button
+          class="btn-secondary btn-sm btn-block"
+          v-clipboard:copy="item.xml"
+          v-clipboard:success="onCopy"
+          v-clipboard:error="onError"
+        >Copy XML</button>
       </template>
       <template v-slot:item.xml="{ item }">
         {{item.xml}}
@@ -31,7 +54,9 @@
         >Copy to clipboard</button>
       </template>
       <template v-slot:item.html="{ item }">
-        <span v-html="item.html"></span>
+        <td>
+          <span v-html="item.html">{{item.html | trunc }}</span>
+        </td>
       </template>
     </v-data-table>
   </div>
@@ -39,7 +64,44 @@
 
 <script>
 import listOfSnippets from "./data/snippetsData.js";
-console.log(listOfSnippets);
+const practiceAreas = [
+  "ARBITRATION",
+  "BANKINGANDFINANCE",
+  "COMMERCIAL",
+  "COMPETITION",
+  "CONSTRUCTION",
+  "CORPORATE",
+  "CORPORATECRIME",
+  "DISPUTERESOLUTION",
+  "EMPLOYMENT",
+  "ENERGY",
+  "ENVIRONMENT",
+  "FAMILYLAW",
+  "FINANCIALSERVICES",
+  "IPANDIT",
+  "IMMIGRATION",
+  "INHOUSE",
+  "INFORMATIONLAW",
+  "INSURANCEANDREINSURANCE",
+  "LIFESCIENCES",
+  "LOCALGOVERNMENT",
+  "PENSIONS",
+  "PERSONALINJURY",
+  "PLANNING",
+  "PRACTICECOMPLIANCE",
+  "PRACTICEMANAGEMENT",
+  "PRIVATECLIENT",
+  "PROPERTY",
+  "PROPERTYDISPUTES",
+  "PUBLICLAW",
+  "RESTRUCTURINGANDINSOLVENCY",
+  "RISKANDCOMPLIANCE",
+  "SHARESCHEMES",
+  "TMT",
+  "TAXLAW",
+  "WILLSANDPROBATE"
+];
+console.log(practiceAreas);
 console.log(status);
 export default {
   data: function() {
@@ -50,7 +112,8 @@ export default {
       PA: "",
       xml: "",
       html: "",
-      data: listOfSnippets
+      data: listOfSnippets,
+      PAs: practiceAreas
     };
   },
   methods: {
@@ -65,6 +128,7 @@ export default {
     headers() {
       return [
         {
+          width: "100px",
           align: top,
           text: "PA",
           value: "PA",
@@ -73,6 +137,7 @@ export default {
           }
         },
         {
+          align: " d-none", //hides the column
           text: "Content ID",
           value: "id",
           filter: f => {
@@ -80,6 +145,7 @@ export default {
           }
         },
         {
+          align: " d-none", //hides the column
           text: "XML",
           value: "xml",
           filter: f => {
@@ -87,7 +153,8 @@ export default {
           }
         },
         {
-          text: "HTML",
+          width: "150px",
+          text: "Preview",
           value: "html",
           filter: f => {
             return (f + "").toLowerCase().includes(this["html"].toLowerCase());
@@ -109,5 +176,53 @@ span {
 }
 .small {
   max-width: 160px;
+}
+.truncate {
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main_heading {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Arial;
+  margin: 0 0 6px 0;
+}
+
+p {
+  font-family: Arial;
+  margin: 0 0 0 0;
+  font-size: 12px;
+}
+li {
+  font-family: Arial;
+  font-size: 12px;
+}
+
+.draftingnotesection {
+  margin: 8px 0 0 8px;
+  border: 4px solid orange;
+  color: orange;
+}
+
+.draftingnotesection h3 {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: Arial;
+  margin: 0 0 0 0;
+  color: white;
+  background-color: orange;
+}
+
+.draftingnotesection h4 {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial;
+  margin: 8px 0 0 8px;
+}
+
+.draftingnotesection p {
+  margin: 8px 16px;
 }
 </style>
