@@ -55,6 +55,16 @@
       </template>
       <template v-slot:item.html="{ item }">
         <td>
+          
+        <br />
+          <button
+          class="btn-secondary btn-sm btn-block"
+          v-clipboard:copy="item.xml"
+          v-clipboard:success="onCopy"
+          v-clipboard:error="onError"
+        >Copy to clipboard</button>
+        <br />
+        <h5>{{item.PA}}</h5>
           <span v-html="item.html"></span>
         </td>
       </template>
@@ -101,8 +111,6 @@ const practiceAreas = [
   "TAXLAW",
   "WILLSANDPROBATE"
 ];
-console.log(practiceAreas);
-console.log(status);
 export default {
   data: function() {
     return {
@@ -128,8 +136,8 @@ export default {
     headers() {
       return [
         {
+          align: " d-none", //hides the column
           width: "100px",
-          align: top,
           text: "PA",
           value: "PA",
           filter: f => {
