@@ -8,6 +8,7 @@
       :item-key="id"
       class="elevation-1"
       :search="search"
+      :disable-sort="true"
     >
       <template v-slot:body.prepend>
         <tr>
@@ -31,28 +32,7 @@
           </td>-->
         </tr>
       </template>
-      <template v-slot:item.PA="{ item }">
-        {{item.PA}}
-        <br />
-        <br />
-        <button
-          class="btn-secondary btn-sm btn-block"
-          v-clipboard:copy="item.xml"
-          v-clipboard:success="onCopy"
-          v-clipboard:error="onError"
-        >Copy XML</button>
-      </template>
-      <template v-slot:item.xml="{ item }">
-        {{item.xml}}
-        <br />
-        <br />
-        <button
-          class="btn-secondary btn-sm btn-block"
-          v-clipboard:copy="item.xml"
-          v-clipboard:success="onCopy"
-          v-clipboard:error="onError"
-        >Copy to clipboard</button>
-      </template>
+      
       <template v-slot:item.html="{ item }">
         <td>
           
@@ -135,22 +115,6 @@ export default {
   computed: {
     headers() {
       return [
-        {
-          align: " d-none", //hides the column
-          text: "PA",
-          value: "PA",
-          filter: f => {
-            return (f + "").toLowerCase().includes(this["PA"].toLowerCase());
-          }
-        },
-        {
-          align: " d-none", //hides the column
-          text: "XML",
-          value: "xml",
-          filter: f => {
-            return (f + "").toLowerCase().includes(this["xml"].toLowerCase());
-          }
-        },
         {
           width: "150px",
           text: "Preview",
