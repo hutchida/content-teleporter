@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-data-table
-      light
+    light
       dense
       :headers="headers"
       :items="data"
@@ -9,6 +9,7 @@
       class="elevation-1"
       :search="search"
       :disable-sort="true"
+      mobile-breakpoint="0"
     >
       <template v-slot:body.prepend>
         <tr>
@@ -116,7 +117,6 @@ export default {
     headers() {
       return [
         {
-          width: "150px",
           value: "html",
           filter: f => {
             return (f + "").toLowerCase().includes(this["html"].toLowerCase());
@@ -129,41 +129,36 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only --><style >
-td,
+td {margin: 0px;padding: 0px;}
+
 span {
   word-wrap: break-word;
   vertical-align: top;
-  padding: 10px;
-  font-size: small;
+  padding: 0px;
+  font-size: small;margin: 0px;
 }
 .small {
   max-width: 160px;
-}
-.truncate {
-  max-width: 150px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .main_heading {
   font-size: 24px;
   font-weight: bold;
   font-family: Arial;
-  margin: 0 0 6px 0;
+  margin: 0 0 0 0;
 }
 
 p {
   font-family: Arial;
   margin: 0 0 0 0;
-  font-size: 12px;
+  font-size: 10px;
 }
 li {
   font-family: Arial;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .draftingnotesection {
-  margin: 8px 0 0 8px;
+  margin: 0px 0 0 0px;
   border: 4px solid orange;
   color: orange;
 }
@@ -181,7 +176,7 @@ li {
   font-size: 16px;
   font-weight: bold;
   font-family: Arial;
-  margin: 8px 0 0 8px;
+  margin: 0px 0 0 0px;
 }
 
 .draftingnotesection p {
