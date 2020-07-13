@@ -137,19 +137,10 @@ export default {
       return [
         {
           align: " d-none", //hides the column
-          width: "100px",
           text: "PA",
           value: "PA",
           filter: f => {
             return (f + "").toLowerCase().includes(this["PA"].toLowerCase());
-          }
-        },
-        {
-          align: " d-none", //hides the column
-          text: "Content ID",
-          value: "id",
-          filter: f => {
-            return (f + "").toLowerCase().includes(this["id"].toLowerCase());
           }
         },
         {
