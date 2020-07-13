@@ -117,6 +117,14 @@ export default {
     headers() {
       return [
         {
+          align: " d-none", //hides the column
+          text: "PA",
+          value: "PA",
+          filter: f => {
+            return (f + "").toLowerCase().includes(this["PA"].toLowerCase());
+          }
+        },
+        {
           value: "html",
           filter: f => {
             return (f + "").toLowerCase().includes(this["html"].toLowerCase());
