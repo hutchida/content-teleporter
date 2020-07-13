@@ -117,7 +117,6 @@ export default {
       return [
         {
           width: "150px",
-          text: "Preview",
           value: "html",
           filter: f => {
             return (f + "").toLowerCase().includes(this["html"].toLowerCase());
