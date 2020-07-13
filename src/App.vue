@@ -16,13 +16,6 @@ export default {
   components: {
     snippets
   },
-          
-   filters: {
-      trunc(str, len = 87) {
-        _.trim(str);
-        return _.truncate(str, {'length': len});
-      },
-    },
 
   data: () => ({
     title: "Content Teleporting"

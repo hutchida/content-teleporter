@@ -55,7 +55,7 @@
       </template>
       <template v-slot:item.html="{ item }">
         <td>
-          <span v-html="item.html">{{item.html | trunc }}</span>
+          <span v-html="item.html"></span>
         </td>
       </template>
     </v-data-table>
