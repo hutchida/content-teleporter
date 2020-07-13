@@ -144,7 +144,7 @@ span {
   font-size: 24px;
   font-weight: bold;
   font-family: Arial;
-  margin: 0 0 0 0;
+  margin: 0 0 6px 0;
 }
 
 p {
@@ -158,7 +158,7 @@ li {
 }
 
 .draftingnotesection {
-  margin: 0px 0 0 0px;
+  margin: 8px 0 0 8px;
   border: 4px solid orange;
   color: orange;
 }
@@ -176,7 +176,7 @@ li {
   font-size: 16px;
   font-weight: bold;
   font-family: Arial;
-  margin: 0px 0 0 0px;
+  margin: 8px 0 0 8px;
 }
 
 .draftingnotesection p {
