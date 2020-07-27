@@ -1,0 +1,65 @@
+Start 24072020
+Searching PSL dump for more info...
+26
+Adding PGUIDS...
+Adding XML column...
+Adding HTML column...
+number of list items: 26
+number of list items post drop duplicates: 26
+Converting to individual HTML pages...
+index:0
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem5f569e16-4888-4fb7-a6d2-909b1f8635e6.html
+index:1
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItemd153a234-e311-4cf9-b8c8-f7ac4f1aa5cd.html
+index:2
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem53660225-a9fd-45f8-a7e6-0c6b2158df4e.html
+index:3
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem7ffe2a15-0caa-44f5-a5de-4ccfd45d43de.html
+index:4
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentIteme2ecbab4-e486-4b68-b19a-74013805d2d5.html
+index:5
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItema764281a-9944-49b1-9286-74816e21d966.html
+index:6
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem938717f9-b71b-450e-ba97-5709a96f8c92.html
+index:7
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem64508a02-66e8-4fe4-aaa7-732c516bd2bc.html
+index:8
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem8dabc94d-ac15-4f02-b7c0-d40242fcca95.html
+index:9
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem0c4ee201-76ae-4075-9ccb-7ed84bffedb3.html
+index:10
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem28512f0b-78f5-494a-b0dd-bc874e473a3b.html
+index:11
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItemaba8c02e-6c0b-4151-923b-05b297a85a11.html
+index:12
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItemfa80d880-d84c-4e3d-ace8-ee0792ea54eb.html
+index:13
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem8feaf598-1dd4-456b-8dff-0ef1686156c4.html
+index:14
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem42724442-7f8d-49fc-a36e-8d6994eb3966.html
+index:15
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItembde5c411-c98f-4348-a593-05ab24ca194c.html
+index:16
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItemf1ca0aff-4fde-4e67-9d4e-8ad9580febd1.html
+index:17
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItembafac083-19be-4212-aaeb-14c4ac2143ad.html
+index:18
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem9f658ca2-4e38-48e7-89e0-7c4015274d82.html
+index:19
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem66331d38-037d-4dde-b923-d862eec970bb.html
+index:20
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem247936ef-500d-40a2-8f77-744bae30bded.html
+index:21
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem271cc1a3-b050-4fd4-9ed3-9a89ef678695.html
+index:22
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem1490085952-34097125.html
+index:23
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem1490085952-34327125.html
+index:24
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem1490085952-34828125.html
+index:25
+Exported html to...\\voyager\templates\Arbortext\custom\reused-components\ukContentItem1561132277-50196260.html
+Converting to javascript file...
+Dict exported
+Finished. Time taken...0:10:16.121886
+

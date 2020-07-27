@@ -1,15 +1,18 @@
 <template>
   <div>
     <v-data-table
-    light
+      light
       dense
       :headers="headers"
       :items="data"
-      :item-key="id"
       class="elevation-1"
       :search="search"
       :disable-sort="true"
       mobile-breakpoint="0"
+      :expanded.sync="expanded"
+      :single-expand="true"
+      show-expand
+      :footer-props="footerProps"
     >
       <template v-slot:body.prepend>
         <tr>
@@ -33,19 +36,24 @@
           </td>-->
         </tr>
       </template>
-      
+
       <template v-slot:item.html="{ item }">
-        <td>
-          
-        <br />
+        <td>{{item.PA}} > {{item.doc_title}} > {{item.clause_title}}</td>
+      </template>
+
+      <template v-slot:expanded-item="{ headers, item }">
+        <td :colspan="headers.length">
+          <br />
           <button
-          class="btn-secondary btn-sm btn-block"
-          v-clipboard:copy="item.xml"
-          v-clipboard:success="onCopy"
-          v-clipboard:error="onError"
-        >Copy to clipboard</button>
-        <br />
-        <h5>{{item.PA}}</h5>
+            class="btn-secondary btn-sm btn-block"
+            v-clipboard:copy="item.xml"
+            v-clipboard:success="onCopy"
+            v-clipboard:error="onError"
+          >Copy to clipboard</button>
+          <br />
+          <sup>Source doc ID: {{item.doc_id}}</sup>
+          <p v-if="item.xref_count > 0" class="warning">xrefs referred to in this clause: <br />{{item.xrefs}}</p>
+          <h5>{{item.PA}}</h5>
           <span v-html="item.html"></span>
         </td>
       </template>
@@ -102,7 +110,9 @@ export default {
       xml: "",
       html: "",
       data: listOfSnippets,
-      PAs: practiceAreas
+      PAs: practiceAreas,
+      expanded: [],
+      footerProps: {'items-per-page-options': [30, 60, 90, 120]}
     };
   },
   methods: {
@@ -129,7 +139,8 @@ export default {
           filter: f => {
             return (f + "").toLowerCase().includes(this["html"].toLowerCase());
           }
-        }
+        },
+        { text: "", value: "data-table-expand" }
       ];
     }
   }
@@ -137,13 +148,20 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only --><style >
-td {margin: 0px;padding: 0px;}
+td {
+  margin: 0px;
+  padding: 0px;
+}
 
 span {
   word-wrap: break-word;
   vertical-align: top;
   padding: 0px;
-  font-size: small;margin: 0px;
+  font-size: small;
+  margin: 0px;
+}
+.warning {
+  color: red
 }
 .small {
   max-width: 160px;
