@@ -1,4 +1,6 @@
 # tele
+See a working example here:
+http://content-teleporter.s3-website.eu-west-2.amazonaws.com/
 
 ## Project setup
 ```
